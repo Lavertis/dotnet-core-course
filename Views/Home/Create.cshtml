@@ -27,10 +27,12 @@
         <div class="col-sm-10">
             <select asp-for="Department" class="form-select"
                     asp-items="Html.GetEnumSelectList<Department>()">
+                <option value="" disabled selected>Please select</option>
             </select>
+            <span asp-validation-for="Department" class="text-danger"></span>
         </div>
     </div>
-    
+
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="input-group row">
