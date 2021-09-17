@@ -28,5 +28,13 @@ namespace EmployeeManagement.Repositories
         {
             return _employeeList;
         }
+
+        public Employee AddEmployee(Employee employee)
+        {
+            var id = _employeeList.Max(e => e.Id) + 1;
+            employee.Id = id;
+            _employeeList.Add(employee);
+            return employee;
+        }
     }
 }

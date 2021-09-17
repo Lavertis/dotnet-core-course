@@ -9,5 +9,7 @@ namespace EmployeeManagement.Repositories
         Employee GetEmployee(int id);
 
         IEnumerable<Employee> GetAllEmployees();
+
+        Employee AddEmployee(Employee employee);
     }
 }
