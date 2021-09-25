@@ -38,14 +38,16 @@ namespace EmployeeManagement
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+            }
 
             app.UseStaticFiles();
             // app.UseRouting();
 
             // app.UseMvcWithDefaultRoute();
             app.UseMvc(routes => { routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
-
-            app.Run(async context => { await context.Response.WriteAsync("Hello World"); });
         }
     }
 }
